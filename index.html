@@ -215,7 +215,7 @@ System.out.println("vesprada");}
 <h3>Activitat 2: Correcció d'errors sintàctics de la classe Test3</h3>
 <p>El codi font de la classe <code>Test3.java</code> agregada al paquet conté deliberadament tres errors sintàctics que impedeixen obtenir el codi compilat. S'ha d'editar la classe per a cercar i corregir aquests errors atenent als missatges d'error produïts en intentar la compilació.</p>
 <p>En la següent figura es mostra un exemple d'execució de la classe una vegada corregida i compilada correctament.</p>
-<figure class="img"><img src="imatges/figura1.png" alt="Exemple d'execució de la classe corregida i compilada" onerror="this.classList.add('falta')"><figcaption><b>Figura 1.</b> Exemple d'execució de la classe corregida i compilada</figcaption></figure>
+<figure class="img"><img src="https://github.com/jesuscb99/iip/blob/main/3_fig1.png?raw=true" alt="Exemple d'execució de la classe corregida i compilada" onerror="this.classList.add('falta')"><figcaption><b>Figura 1.</b> Exemple d'execució de la classe corregida i compilada</figcaption></figure>
 <div class="track"><h4>Seguiment</h4>
 <label><input type="checkbox" data-k="a2a"> He intentat compilar i he llegit els missatges d'error</label>
 <label><input type="checkbox" data-k="a2b"> Error sintàctic 1 corregit</label>
@@ -234,7 +234,7 @@ System.out.println("vesprada");}
 <section id="a4" data-title="Activitat 4">
 <h3>Activitat 4: Escriptura de l'hora introduïda en el format hh:mm</h3>
 <p>S'ha de modificar el programa anterior perquè l'hora introduïda s'escriga en l'eixida en el format de quatre dígits <code>hh:mm</code>, completant amb zeros si cal, com es mostra en l'execució exemple de la següent figura:</p>
-<figure class="img"><img src="imatges/figura2.png" alt="Execució exemple amb l'hora en format hh:mm" onerror="this.classList.add('falta')"><figcaption><b>Figura 2.</b> Execució exemple amb l'hora en format hh:mm</figcaption></figure>
+<figure class="img"><img src="https://github.com/jesuscb99/iip/blob/main/3_fig2.png?raw=true" alt="Execució exemple amb l'hora en format hh:mm" onerror="this.classList.add('falta')"><figcaption><b>Figura 2.</b> Execució exemple amb l'hora en format hh:mm</figcaption></figure>
 <p>Per a resoldre el problema es recomana usar les operacions de la classe <code>String</code>, de manera que per a un parell hores i minuts es componga un <code>String</code> de la forma "hh:mm" que siga el que s'escriga en l'eixida.</p>
 <p>Una manera directa i senzilla d'aconseguir-ho és anteposar sempre "0" a les hores (respectivament als minuts) quedant un <code>String</code> de dos o tres caràcters segons el cas. Exemples: si <code>h</code> val 9, l'expressió <code>"0" + h</code> dóna "09"; si <code>h</code> val 10, el <code>String</code> resultant és "010". Independentment del valor de <code>h</code>, n'hi ha prou amb obtenir el substring format pels dos últims caràcters d'aquest <code>String</code> per a obtenir la representació en dos dígits que es precisa.</p>
 <p>Per a açò, és convenient recordar que, segons la documentació de <code>String</code>:</p>
@@ -242,6 +242,8 @@ System.out.println("vesprada");}
 <li>El mètode <code>int length()</code> permet obtenir el nombre <i>n</i> de caràcters d'un <code>String</code>, que se suposen numerats de 0 a <i>n</i> − 1.</li>
 <li>El mètode <code>String substring(int i)</code>, obté el substring format pels caràcters del <code>String</code> des del que ocupa la posició <i>i</i> fins a l'últim, tots dos inclusivament. En aquest problema, el substring que interessa és el que s'estén des de l'índex <i>n</i> − 2 endavant.</li>
 </ul>
+<figure class="img"><img src="https://github.com/jesuscb99/iip/blob/main/3_fig7.png?raw=true" alt="Execució exemple amb l'hora en format hh:mm" onerror="this.classList.add('falta')"><figcaption><b>Figura 2.</b> Execució exemple amb l'hora en format hh:mm</figcaption></figure>
+
 <p>Suposant que en la variable <code>String hh</code> s'hagueren obtingut les hores en format de dos dígits i en la variable <code>mm</code> els minuts en el mateix format, l'hora en el format sol·licitat s'obté mitjançant la concatenació <code>hh + ":" + mm</code>.</p>
 <p>S'haurà de comprovar la correcció del programa provant a introduir per a les hores i minuts casos com els de la següent taula i verificant l'hora que s'escriu en l'eixida:</p>
 <table>
@@ -267,11 +269,11 @@ System.out.println("vesprada");}
 <p>El mètode retorna una quantitat entera de tipus <code>long</code>, atès que el seu valor és molt gran i no cap en una variable de tipus <code>int</code>. Com en el càlcul que es va a realitzar no interessen unitats de temps inferiors a un minut, la següent instrucció Java de tipus <code>long</code> calcula el nombre de minuts complets com el quocient de la divisió ENTERA entre el valor retornat pel mètode i el valor <code>60 * 1000</code> que són el total de mil·lisegons d'un minut, i ho emmagatzema en una variable <code>tMinTotal</code> de tipus <code>long</code>:</p>
 <pre><code>long tMinTotal = System.currentTimeMillis() / (60 * 1000);</code></pre>
 <p>Així, en <code>tMinTotal</code> es tenen, per tant, els minuts transcorreguts UTC des de les 00:00 de l'1 de gener de 1970 i el dia actual fins al moment en què s'executa l'instrucció anterior. De tots aquests minuts obtinguts, només ens interessen els corresponents al dia actual, que es poden calcular com el residu de la divisió entera entre el resultat de l'operació anterior i el nombre de minuts d'un dia complet que és <code>24 * 60</code> (com pot veure's en la figura que segueix). Els minuts del dia actual són un valor molt més xicotet que l'obtingut anteriorment i sí es pot representar com <code>int</code>.</p>
-<figure class="img"><img src="imatges/figura3.png" alt="Minuts del dia actual com a residu de la divisió entera" onerror="this.classList.add('falta')"><figcaption><b>Figura 3.</b> Minuts del dia actual com a residu de la divisió entera</figcaption></figure>
+<figure class="img"><img src="https://github.com/jesuscb99/iip/blob/main/3_fig3.png?raw=true" alt="Minuts del dia actual com a residu de la divisió entera" onerror="this.classList.add('falta')"><figcaption><b>Figura 3.</b> Minuts del dia actual com a residu de la divisió entera</figcaption></figure>
 <p>En la següent instrucció es força mitjançant un càsting aquesta transformació de representació, sabent que el valor enter corresponent es preserva i podent assignar-se, a més, a una variable de tipus <code>int</code> sense que es produïsca un error de compilació per incompatibilitat de tipus:</p>
 <pre><code>int tMinCurrent = (int) (tMinTotal % (24 * 60));</code></pre>
 <p>En la figura que ve a continuació es mostren exemples del comportament del casting de <code>long</code> a <code>int</code> segons el rang del valor enter transformat.</p>
-<figure class="img"><img src="imatges/figura4.png" alt="Exemples de casting de long a int segons el rang del valor" onerror="this.classList.add('falta')"><figcaption><b>Figura 4.</b> Exemples de casting de long a int segons el rang del valor</figcaption></figure>
+<figure class="img"><img src="https://github.com/jesuscb99/iip/blob/main/3_fig4.png?raw=true" alt="Exemples de casting de long a int segons el rang del valor" onerror="this.classList.add('falta')"><figcaption><b>Figura 4.</b> Exemples de casting de long a int segons el rang del valor</figcaption></figure>
 <p>A partir del valor de <code>tMinCurrent</code> calculat com en la instrucció anterior, es poden obtenir mitjançant senzilles operacions aritmètiques les hores i minuts del moment actual que es precisen per a resoldre l'enunciat.</p>
 <p class="small"><sup>1</sup> Temps Universal Coordinat, estàndard mundial equivalent en la pràctica a l'hora Greenwich. A Espanya, excepte Canàries, regeix l'hora Greenwich + 2 en horari d'estiu, i l'hora Greenwich + 1 en horari d'hivern.</p>
 <div class="track"><h4>Seguiment</h4>
@@ -286,7 +288,7 @@ System.out.println("vesprada");}
 <h3>Activitat 6: Diferència en minuts entre dues hores</h3>
 <p>Finalment, s'ha de calcular i mostrar també per pantalla el valor absolut de la diferència en minuts entre l'hora introduïda per teclat i l'hora actual (consultar en la documentació de la classe <code>Math</code> els mètodes disponibles per a calcular el valor absolut d'enters i reals), expressant-se a continuació en hores i minuts.</p>
 <p>El resultat de l'execució ha de ser com el que es mostra en l'exemple de la figura següent:</p>
-<figure class="img"><img src="imatges/figura5.png" alt="Exemple d'execució amb la diferència en minuts" onerror="this.classList.add('falta')"><figcaption><b>Figura 5.</b> Exemple d'execució amb la diferència en minuts</figcaption></figure>
+<figure class="img"><img src="https://github.com/jesuscb99/iip/blob/main/3_fig5.png?raw=true" alt="Exemple d'execució amb la diferència en minuts" onerror="this.classList.add('falta')"><figcaption><b>Figura 5.</b> Exemple d'execució amb la diferència en minuts</figcaption></figure>
 <div class="track"><h4>Seguiment</h4>
 <label><input type="checkbox" data-k="a6a"> He consultat els mètodes de valor absolut de <code>Math</code></label>
 <label><input type="checkbox" data-k="a6b"> Es mostra el valor absolut de la diferència en minuts</label>
@@ -322,7 +324,7 @@ Un càlcul anàleg és aplicable a les xifres dels minuts, amb la qual cosa es p
 <tr><td>19</td><td>35</td><td>"19:35"</td><td>false</td><td><input type="checkbox" data-k="axt6" class="rowchk"></td></tr>
 </table>
 <p>Els missatges resultants han de ser com els que es mostren en la següent execució exemple:</p>
-<figure class="img"><img src="imatges/figura6.png" alt="Execució exemple dels missatges de l'activitat extra" onerror="this.classList.add('falta')"><figcaption><b>Figura 6.</b> Execució exemple dels missatges de l'activitat extra</figcaption></figure>
+<figure class="img"><img src="https://github.com/jesuscb99/iip/blob/main/3_fig6.png?raw=true" alt="Execució exemple dels missatges de l'activitat extra" onerror="this.classList.add('falta')"><figcaption><b>Figura 6.</b> Execució exemple dels missatges de l'activitat extra</figcaption></figure>
 <div class="track"><h4>Seguiment</h4>
 <label><input type="checkbox" data-k="axa"> Extra 1: format "hh:mm" amb <code>h / 10 + "" + h % 10</code></label>
 <label><input type="checkbox" data-k="axb"> Extra 2: valor lògic hora introduïda anterior a l'actual</label>
